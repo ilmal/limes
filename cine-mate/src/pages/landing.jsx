@@ -1,8 +1,12 @@
 
 
 const Landing = ()=>{
+
+
     return(
-        <h1>HELLO!</h1>
+        <div className="landing">
+            
+        </div>
     )
 }
 
