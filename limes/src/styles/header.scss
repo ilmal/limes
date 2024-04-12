@@ -31,25 +31,21 @@
         // background-color: beige;
         display: flex;
         justify-content: flex-end;
-        align-items: flex-start;
-        margin-top: 10px;
+        align-items: center;
+        // margin-top: 10px;
 
         ul {
-            width: 32%;
+            width: 50%;
             height: 100%;
             list-style-type: none;
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
+            align-items: center;
 
             
             li {
                 // transition: all ease 1s;
                 font-size: 1.2rem;
-
-                &:hover {
-                    color: rgba($color: #a6ffe3, $alpha: 1.0);
-                }
             }
 
             div {
@@ -57,6 +53,13 @@
                 height: 30%;
                 background-color: rgba($color: #ffffff, $alpha: 1.0);
             }
+        }
+    }
+
+    .linkStyle{
+        cursor: pointer;
+        &:hover {
+            color: rgba($color: #20f643, $alpha: 1.0);
         }
     }
 }
