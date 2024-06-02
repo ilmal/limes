@@ -2,6 +2,7 @@ import {useState} from "react"
 
 const CineMate = ()=>{
     const [hasSelectedList, setHasSelectedList] = useState(false);
+    const [showWatchedMovies, setShowWatchedMovies] = useState(false);
 
     const tempList = [
         {
@@ -11,9 +12,27 @@ const CineMate = ()=>{
             "list": [
                 {
                     "name": "My neighbor Totoro",
-                    "image": "",
-                    "prio": 1,
-                    "watched": false
+                    "prio": 5,
+                    "genre": "Mysig",
+                    "length": "1h 26m",
+                    "watched": false,
+                    "imdb": "https://m.imdb.com/title/tt0096283/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_my%2520neighbor"
+                },
+                {
+                    "name": "Spider-man",
+                    "prio": 3,
+                    "genre": "Nostalgia",
+                    "length": "1h 45m",
+                    "watched": false,
+                    "imdb": "https://m.imdb.com/title/tt0096283/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_my%2520neighbor"
+                },
+                {
+                    "name": "Iron-man",
+                    "prio": 2,
+                    "genre": "Nostalgia",
+                    "length": "1h 51m",
+                    "watched": false,
+                    "imdb": "https://m.imdb.com/title/tt0096283/?ref_=nv_sr_srsg_0_tt_8_nm_0_q_my%2520neighbor"
                 }
             ],
             "color": "white"
@@ -59,9 +78,42 @@ const CineMate = ()=>{
     }
 
     const displayWonkyList = ()=> {
+        //                 <p onClick={()=> {setHasSelectedList(false)}}>Back</p>
+
 
         return (
-            <h3>WONKY LIST</h3>
+            <div className="movielist">
+                <div className="menu">
+                    <button onClick={()=> {setHasSelectedList(false)}}>Back</button>
+                    <button onClick={()=> {setShowWatchedMovies(!showWatchedMovies)}}>
+                        {
+                            showWatchedMovies?
+                                <span>Hide watched</span>
+                            :
+                                <span>Show watched</span>
+                        }
+                    </button>
+                </div>
+
+                <div className="movies">
+                    {
+                        tempList.map(list=>{
+                            if (list.id === hasSelectedList) {
+                                return list.list.map(movie=> {
+                                    return (
+                                        <div className="movie" key={movie.name}>
+                                            <span> {movie.name} </span>
+                                            <span> {movie.length} </span>
+                                            <span> {movie.genre} </span>
+                                        </div>
+                                    )
+                                })
+                            }
+                        })
+                    }
+                </div>
+
+            </div>
         )
     }   
 
