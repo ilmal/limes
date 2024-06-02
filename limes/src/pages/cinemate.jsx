@@ -1,8 +1,11 @@
-
+import {useState} from "react"
 
 const CineMate = ()=>{
+    const [hasSelectedList, setHasSelectedList] = useState(false);
+
     const tempList = [
         {
+            "id": "nms",
             "name": "Nils måste se",
             "description": "Filmer som nils måste se om inte han vill bli kallad för en uncultured swine.",
             "list": [
@@ -16,8 +19,9 @@ const CineMate = ()=>{
             "color": "white"
         },
         {
+            "id": "ems",
             "name": "Emilie måste se",
-            "description": "Filmer som Emilie måste se om inte han vill bli kallad för en uncultured swine.",
+            "description": "Filmer som Emilie måste se om inte hon vill bli kallad för en uncultured swine.",
             "list": [
                 {
                     "name": "The Phantom Menace",
@@ -37,7 +41,7 @@ const CineMate = ()=>{
             returnList.push ((
                 <div key={list.name} className="lists" style={{
                     backgroundColor: list.color
-                }}>
+                }} onClick={()=> {setHasSelectedList(list.id)}}>
                     <div className="image">
 
                     </div>
@@ -54,10 +58,22 @@ const CineMate = ()=>{
         return returnList
     }
 
+    const displayWonkyList = ()=> {
+
+        return (
+            <h3>WONKY LIST</h3>
+        )
+    }   
+
     return(
-        <div className="cineMate">
-            {displayLists()}
-        </div>
+            <div className="cineMate">
+                {
+                    hasSelectedList?
+                        displayWonkyList() 
+                    :
+                        displayLists()
+                }
+            </div>
     )
 }
 

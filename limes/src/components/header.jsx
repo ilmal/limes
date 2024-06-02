@@ -9,7 +9,7 @@ const Header = () => {
             </div>
             <div className="menu">
                 <ul>
-                    <li onClick={()=> {navigate("/cinemate")}} className="linkStyle">CineMate</li>
+                    <li onClick={()=> {navigate("/cinemate")}} className="linkStyle cinemate">CineMate</li>
                     <div />
                     <li className="linkStyle">Drinks</li>
                     <div />

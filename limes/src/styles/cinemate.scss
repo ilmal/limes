@@ -1,17 +1,27 @@
-.cineMate {
-    $outer-space: rgba(75, 83, 87, 1);
-    $tekhelet: rgba(84, 51, 121, 1);
-    $tropical-indigo: rgba(157, 141, 241, 1);
-    $periwinkle: rgba(184, 205, 248, 1);
-    $amaranth-purple: rgba(165, 19, 82, 1);
+@import "./palette.scss";
 
+.cineMate {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     font-family: "Futura";
     letter-spacing: 1px;
+    background-color: $tropical-indigo;
 
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    margin-top: -10vh;
+    padding-top: 10vh;
+
+    // z-index: -1;
+
+
+    h3 {
+        color: white;
+    }
+    
     .lists {
         margin: 10px;
         height: 400px;
@@ -20,6 +30,12 @@
 
         display: flex;
         flex-direction: column;
+
+        transition: all ease 0.25s;
+
+        &:hover {
+            transform: scale(1.01);
+        }
 
         .image {
             height: 55%;
@@ -33,6 +49,7 @@
             justify-content: center;
             align-items: flex-end;
             margin-bottom: 10px;
+            color: $amaranth-purple;
 
         }
 

@@ -1,20 +1,18 @@
-.landing {
-    $dark-green: rgba(20, 52, 43, 1);
-    $sea-green: rgba(74, 143, 98, 1);
-    $celadon: rgba(169, 239, 175, 1);
-    $dutch-white: rgba(250, 237, 202, 1);
-    $imperial-red: rgba(241, 81, 82, 1);
+@import "./palette.scss";
 
+.landing {
     position: relative;
     width: 100vw;
     height: 100vh;
 
-    background-image: url("../../public/Sun-rays.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+    // background-image: url("../../public/Sun-rays.png");
+    // background-repeat: no-repeat;
+    // background-size: cover;
     margin-top: -10vh;
 
-    opacity: 0.5;
+    background-color: $celadon;
+
+    // opacity: 0.5;
 
     z-index: -1;
 }

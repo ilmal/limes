@@ -1,0 +1,21 @@
+version: '3.5'
+
+# if colima dies on mac, start with: colima start --mount-type 9p 
+# in order to avoid local file permissions
+
+# psql postgresql://limes@localhost:5432/limes
+
+services:
+  postgres:
+    container_name: limesDB
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: limes
+      POSTGRES_PASSWORD: pass123
+      POSTGRES_DB: limes
+      PGDATA: /data/postgres
+    volumes:
+       - ./postgres:/data/postgres
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
