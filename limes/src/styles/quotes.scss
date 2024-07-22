@@ -30,6 +30,7 @@
     }
 
     .quoteList{
+        margin-top: 15vh;
         display: flex;
         flex-direction: column;
         gap: 2vh;
@@ -37,6 +38,27 @@
             width: 60vw;
             height: 10vh;
             background-color: white;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            .quote{
+                font-size: 2rem;
+            }
+            .name{
+                font-size: 1rem;
+            }
+            button{
+                padding: 10px 20px;
+                background-color: red;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                font-size: 14px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
         }
     }
 

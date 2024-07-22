@@ -5,6 +5,7 @@ const Quotes = () => {
     const [page, setPage] = useState("list");
     const [name, setName] = useState("");
     const [quotes, setQuotes] = useState([]);
+    const [updatePage, setUpdatePage] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -46,7 +47,24 @@ const Quotes = () => {
                 });
         }
 
-    }, [page])
+    }, [page, updatePage])
+
+    const handleDelete = (quote) => {
+        const requestOptions = {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ 
+                quote: quote,
+            })
+        };
+
+        fetch(process.env.REACT_APP_BACKEND + "/api/quote", requestOptions)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data)
+                setUpdatePage(!updatePage)
+            });
+    }
 
     return (
         <div className="quotes">
@@ -64,8 +82,11 @@ const Quotes = () => {
                 quotes.map((quote, index) => {
                     return (
                         <div key={index} className="quote">
-                            <p>{quote[0]}</p>
-                            <p>{quote[1]}</p>
+                            <div>
+                                <p className='quote'>{quote[1]}</p>
+                                <p className='name'>{quote[0]}</p>
+                            </div>
+                            <button onClick={()=>handleDelete(quote[1])}>Delete</button>
                         </div>
                     )
                 })
