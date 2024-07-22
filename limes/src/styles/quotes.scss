@@ -43,21 +43,78 @@
             flex-direction: row;
             justify-content: center;
             align-items: center;
-            .quote{
-                font-size: 2rem;
-            }
-            .name{
-                font-size: 1rem;
-            }
             button{
-                padding: 10px 20px;
-                background-color: red;
-                color: white;
+                margin-right: 1rem;
+                color: black;
                 border: none;
                 border-radius: 5px;
                 font-size: 14px;
                 cursor: pointer;
                 transition: background-color 0.3s ease;
+            }
+            div{
+                .quote{
+                    font-size: 2rem;
+                }
+                .name{
+                    margin-left: .3rem;
+                    font-size: 1rem;
+                }
+            }
+        }
+        .deleteConfirmation{
+            position: absolute;
+            width: 100vw !important;
+            height: 100vh !important;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            margin: auto;
+            backdrop-filter: blur(2px);
+            background-color: transparent;
+            div{
+                height: 40vh;
+                width: 40vw;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: space-around;
+                background-color: white;
+                
+                p{
+                    text-align: center;
+                    font-size: 2rem;
+                }
+                span{
+                    margin-top: 1rem;
+                    font-size: 1rem;
+                }
+                div{
+                    display: flex;
+                    flex-direction: row;
+
+                    .btnYes{
+                        background-color: #007BFF;
+                    }
+
+                    .btnNo{
+                        background-color: red;
+                    }
+
+                    button{
+                        padding: 20px 30px;
+                        color: white;
+                        border: none;
+                        border-radius: 5px;
+                        font-size: 14px;
+                        cursor: pointer;
+                        transition: background-color 0.3s ease;
+                    }
+                    
+                    button:hover {
+                        background-color: #0056b3;
+                    }
+                }
             }
         }
     }

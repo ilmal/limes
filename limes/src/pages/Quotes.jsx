@@ -6,6 +6,7 @@ const Quotes = () => {
     const [name, setName] = useState("");
     const [quotes, setQuotes] = useState([]);
     const [updatePage, setUpdatePage] = useState(false);
+    const [deleteConfirmation, setDeleteConfirmation] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -28,6 +29,7 @@ const Quotes = () => {
                 console.log(data)
                 if (data.status === "ok") {
                     setName("")   
+                    setPage("list")
                 }
             });
     }
@@ -81,13 +83,33 @@ const Quotes = () => {
                 {
                 quotes.map((quote, index) => {
                     return (
-                        <div key={index} className="quote">
+                        <>
+                        <div key={index}>
                             <div>
-                                <p className='quote'>{quote[1]}</p>
-                                <p className='name'>{quote[0]}</p>
+                                <p className='quote'>"{quote[1]}"</p>
+                                <p className='name'>-{quote[0].charAt(0).toUpperCase() + quote[0].slice(1)}</p>
                             </div>
-                            <button onClick={()=>handleDelete(quote[1])}>Delete</button>
+                            <button onClick={()=>setDeleteConfirmation(quote[1])}>X</button>
                         </div>
+                        {deleteConfirmation?
+                            <div className="deleteConfirmation">
+                                <div>
+                                    <p>Are you sure you want to delete this quote?</p>
+                                    <span>"{deleteConfirmation}"</span>
+                                    <div>
+                                        <button onClick={()=>{
+                                            handleDelete(deleteConfirmation)
+                                            setDeleteConfirmation(false)
+                                        }} className='btnYes'>Yes</button>
+                                        <button onClick={()=>setDeleteConfirmation(false)} className='btnNo'>No</button>
+                                    </div>
+                                </div>
+                            </div>
+                            :
+                            null
+                        }
+                        </>
+         
                     )
                 })
                 }
