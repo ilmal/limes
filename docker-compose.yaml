@@ -3,7 +3,7 @@ version: '3.5'
 # if colima dies on mac, start with: colima start --mount-type 9p 
 # in order to avoid local file permissions
 
-# psql postgresql://limes@localhost:5432/limes
+# psql postgresql://limes:pass123@localhost:5432/limes
 
 services:
   postgres:
