@@ -1,4 +1,4 @@
-name: Create docker images
+name: Auto deploy to server
 
 on:
   push:
