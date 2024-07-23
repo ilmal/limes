@@ -21,6 +21,5 @@ jobs:
           newgrp docker
           cd limes
           git pull origin prod
-          git config pull.rebase false
           docker-compose down
           docker-compose up -d --build
