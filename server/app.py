@@ -12,7 +12,7 @@ else:
 # establishing connection to DB
 def create_connection():
     return psycopg2.connect(
-        database="limes", user='limes', password='pass123', host=DATABASE_ADDRESS, port= '5432'
+        database="limes", user='limes', password='pass123', host=DATABASE_ADDRESS, port= '143416'
     )
 
 app = Flask(__name__)
