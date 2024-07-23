@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 30003
 
 # Start the Flask server
-# CMD ["sh", "-c", "./server/prod_run.sh"]
+CMD ["sh", "-c", "/app/prod_run.sh"]
