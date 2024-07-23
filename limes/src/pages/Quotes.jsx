@@ -8,7 +8,10 @@ const Quotes = () => {
     const [updatePage, setUpdatePage] = useState(false);
     const [deleteConfirmation, setDeleteConfirmation] = useState(false);
 
-    const BACKEND_URL = "http://localhost:14345"
+    let BACKEND_URL = "http://nils.u1.se:30003"
+    if (process.env.REACT_APP_BACKEND){
+        BACKEND_URL = process.env.REACT_APP_BACKEND
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
