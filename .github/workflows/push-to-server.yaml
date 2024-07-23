@@ -1,0 +1,24 @@
+name: Create docker images
+
+on:
+  push:
+    branches: [ "prod" ]
+  pull_request:
+    branches: [ "prod" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: auto deploy
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        script: |
+          newgrp docker
+          cd limes
+          docker-compose down
+          docker-compose up -d --build

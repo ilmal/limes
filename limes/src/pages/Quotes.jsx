@@ -8,11 +8,13 @@ const Quotes = () => {
     const [updatePage, setUpdatePage] = useState(false);
     const [deleteConfirmation, setDeleteConfirmation] = useState(false);
 
+    const BACKEND_URL = "http://localhost:3001"
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const quote = e.target[0].value
 
-        console.log(process.env.REACT_APP_BACKEND)
+        console.log(BACKEND_URL)
 
         const requestOptions = {
             method: 'POST',
@@ -23,7 +25,7 @@ const Quotes = () => {
             })
         };
 
-        fetch(process.env.REACT_APP_BACKEND + "/api/quote", requestOptions)
+        fetch(BACKEND_URL + "/api/quote", requestOptions)
             .then(response => response.json())
             .then(data => {
                 console.log(data)
@@ -41,7 +43,7 @@ const Quotes = () => {
                 headers: { 'Content-Type': 'application/json' },
             };
 
-            fetch(process.env.REACT_APP_BACKEND + "/api/quote", requestOptions)
+            fetch(BACKEND_URL + "/api/quote", requestOptions)
                 .then(response => response.json())
                 .then(data => {
                     console.log(data)
@@ -60,7 +62,7 @@ const Quotes = () => {
             })
         };
 
-        fetch(process.env.REACT_APP_BACKEND + "/api/quote", requestOptions)
+        fetch(BACKEND_URL + "/api/quote", requestOptions)
             .then(response => response.json())
             .then(data => {
                 console.log(data)

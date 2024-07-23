@@ -6,8 +6,27 @@ version: '3.5'
 # psql postgresql://limes:pass123@localhost:5432/limes
 
 services:
-  postgres:
-    container_name: limesDB
+  app:
+    build:
+      context: ./limes    
+    ports:
+      - "3000:80"
+    links:
+      - db
+      - backend
+    restart: unless-stopped
+    networks:
+      - limes-network
+  backend:
+    build:
+      context: ./server
+    environment:
+      - DATABASE_ADDRESS=db
+    ports:
+      - "3001:3001"
+    networks:
+      - limes-network
+  db:
     image: postgres:latest
     environment:
       POSTGRES_USER: limes
@@ -19,3 +38,7 @@ services:
     ports:
       - "5432:5432"
     restart: unless-stopped
+    networks:
+      - limes-network
+networks:
+  limes-network:

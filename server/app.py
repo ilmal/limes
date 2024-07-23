@@ -1,12 +1,18 @@
 import psycopg2
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+import os
+
+if os.environ.get('DATABASE_ADDRESS'):
+    DATABASE_ADDRESS = os.environ['DATABASE_ADDRESS']
+else:
+    DATABASE_ADDRESS = "localhost"
 
 
 # establishing connection to DB
 def create_connection():
     return psycopg2.connect(
-        database="limes", user='limes', password='pass123', host='127.0.0.1', port= '5432'
+        database="limes", user='limes', password='pass123', host=DATABASE_ADDRESS, port= '5432'
     )
 
 app = Flask(__name__)
