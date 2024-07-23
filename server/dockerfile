@@ -15,6 +15,7 @@ COPY . .
 
 # Expose port 5000 to serve the app
 EXPOSE 30003
+RUN chmod +x /app/prod_run.sh
 
 # Start the Flask server
 CMD ["sh", "-c", "/app/prod_run.sh"]
