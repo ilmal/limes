@@ -23,7 +23,7 @@ services:
     environment:
       - DATABASE_ADDRESS=db
     ports:
-      - "14345:14345"
+      - "30003:30003"
     networks:
       - limes-network
   db:
