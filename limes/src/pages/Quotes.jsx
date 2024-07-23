@@ -8,7 +8,7 @@ const Quotes = () => {
     const [updatePage, setUpdatePage] = useState(false);
     const [deleteConfirmation, setDeleteConfirmation] = useState(false);
 
-    let BACKEND_URL = "http://nils.u1.se:30003"
+    let BACKEND_URL = "https://limesback.servers.u1.se"
     if (process.env.REACT_APP_BACKEND){
         BACKEND_URL = process.env.REACT_APP_BACKEND
     }

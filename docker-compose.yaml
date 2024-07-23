@@ -21,7 +21,7 @@ services:
     build:
       context: ./server
     environment:
-      - DATABASE_ADDRESS=https://limesback.servers.u1.se
+      - DATABASE_ADDRESS=db
     ports:
       - "30003:30003"
     networks:
