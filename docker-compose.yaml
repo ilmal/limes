@@ -23,7 +23,7 @@ services:
     environment:
       - DATABASE_ADDRESS=db
     ports:
-      - "3001:3001"
+      - "143415:3001"
     networks:
       - limes-network
   db:
@@ -36,7 +36,7 @@ services:
     volumes:
        - ./postgres:/data/postgres
     ports:
-      - "5432:5432"
+      - "143416:5432"
     restart: unless-stopped
     networks:
       - limes-network
