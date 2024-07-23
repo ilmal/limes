@@ -26,6 +26,8 @@ services:
       - "30003:30003"
     networks:
       - limes-network
+    depends_on:
+      - db
   db:
     image: postgres:latest
     environment:

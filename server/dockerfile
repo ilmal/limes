@@ -14,7 +14,7 @@ RUN pip install -r requirements.txt
 COPY . .
 
 # Expose port 5000 to serve the app
-EXPOSE 3001
+EXPOSE 30003
 
 # Start the Flask server
-CMD ["flask", "run", "--host=0.0.0.0", "--port", "30003"]
+CMD ["sh", "-c", "prod_run.sh"]
