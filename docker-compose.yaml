@@ -10,7 +10,7 @@ services:
     build:
       context: ./limes    
     ports:
-      - "3000:80"
+      - "30002:80"
     links:
       - db
       - backend
