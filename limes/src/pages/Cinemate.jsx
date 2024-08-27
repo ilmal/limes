@@ -118,7 +118,7 @@ const CineMate = ()=>{
     }   
 
     return(
-            <div className="cineMate">
+            <div className="cineMate backgroundLimes">
                 {
                     hasSelectedList?
                         displayWonkyList() 

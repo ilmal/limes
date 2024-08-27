@@ -3,7 +3,7 @@
 const Landing = ()=>{
 
     return(
-        <div className="landing">
+        <div className="landing backgroundLimes">
             
         </div>
     )

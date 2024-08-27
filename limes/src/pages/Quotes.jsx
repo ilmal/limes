@@ -74,7 +74,7 @@ const Quotes = () => {
     }
 
     return (
-        <div className="quotes">
+        <div className="quotes backgroundLimes">
             <div className='topButtons'>
                 <button onClick={()=>setPage("list")}>Quotes</button>
                 <button onClick={()=>setPage("add")}>Add</button>
