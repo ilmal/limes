@@ -62,12 +62,17 @@
 
     .linkStyle{
         cursor: pointer;
+
         &:hover {
             color: rgba($color: $celadon, $alpha: 1.0);
         }
     }
 
     .cinemate:hover {
-        color: rgba($color: $tropical-indigo, $alpha: 1.0);
+        color: rgba($color: $periwinkle, $alpha: 1.0);
+    }
+
+    .quote:hover {
+        color: rgba($color: $mint-green, $alpha: 1.0)
     }
 }
