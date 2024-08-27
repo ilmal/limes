@@ -1,27 +1,37 @@
+@import "./palette.scss";
+
 .quotes {
     width: 100%;
     height: 90vh;
-    background-color: coral;
+    background-color: rgba($color: $aero, $alpha: 1);
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: -10vh;
+    padding-top: 10vh;
+    // background-image: url("../../public/limesBG.png");
+    // background-blend-mode: soft-light;
+
     .topButtons{
         justify-self: flex-start;
         margin-top: 3vh;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        width: 50%;
+        width: 20%;
         height: fit-content;
+        margin-bottom: 15px;
+        
         button{
-            padding: 20px 30px;
-            background-color: #007BFF;
+            padding: 13px 20px;
+            background-color: rgba($color: $indigo-dye, $alpha: 1);
             color: white;
             border: none;
-            border-radius: 5px;
-            font-size: 14px;
+            border-radius: 20px;
+            font-size: 16px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            font-family: 'TW Cen MT';
         }
         
         button:hover {
@@ -34,6 +44,7 @@
         display: flex;
         flex-direction: column;
         gap: 2vh;
+
         div{
             width: 60vw;
             height: 10vh;
@@ -43,6 +54,7 @@
             flex-direction: row;
             justify-content: center;
             align-items: center;
+
             button{
                 margin-right: 1rem;
                 color: black;
@@ -52,10 +64,13 @@
                 cursor: pointer;
                 transition: background-color 0.3s ease;
             }
+
             div{
+
                 .quote{
                     font-size: 2rem;
                 }
+
                 .name{
                     margin-left: .3rem;
                     font-size: 1rem;
@@ -72,6 +87,7 @@
             margin: auto;
             backdrop-filter: blur(2px);
             background-color: transparent;
+
             div{
                 height: 40vh;
                 width: 40vw;
@@ -85,10 +101,12 @@
                     text-align: center;
                     font-size: 2rem;
                 }
+
                 span{
                     margin-top: 1rem;
                     font-size: 1rem;
                 }
+
                 div{
                     display: flex;
                     flex-direction: row;
@@ -109,6 +127,7 @@
                         font-size: 14px;
                         cursor: pointer;
                         transition: background-color 0.3s ease;
+                        font-family: 'TW Cen MT';
                     }
                     
                     button:hover {
@@ -120,21 +139,24 @@
     }
 
     .box {
-        margin-top: 15vh;
+        margin-top: 5vh;
         width: 400px;
         height: 300px;
         padding: 50px;
-        background-color: white;
+        background-color: rgba($color: $antiflash-white, $alpha: 1.0);
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         display: flex;
         flex-direction: column;
         justify-content: center;
+
         label {
             margin-bottom: 30px;
             text-align: center;
-            font-size: 2rem;
-            color: #333;
+            font-size: 3rem;
+            letter-spacing: 1px;
+            color: rgba($color: $indigo-dye, $alpha: 1.0);
+            font-family: 'Futura';
         }
 
         input {
@@ -142,24 +164,26 @@
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
-            font-size: 14px;
+            font-size: 15px;
             width: 100%;
             box-sizing: border-box;
+            font-family: 'TW Cen MT';
         }
         
         button {
-            padding: 10px 20px;
-            background-color: #007BFF;
+            padding: 13px 20px;
+            background-color: rgba($color: $aero, $alpha: 1);
             color: white;
             border: none;
-            border-radius: 5px;
-            font-size: 14px;
+            border-radius: 20px;
+            font-size: 16px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: 0.3s ease;
+            font-family: 'TW Cen MT';
         }
         
         button:hover {
-            background-color: #0056b3;
+            transform: scale(1.015);
         }
 
         div{
@@ -167,20 +191,49 @@
             display: flex;
             flex-direction: row;
             justify-content: space-around;
+
             .backButton{
-                background-color: red;
+                background-color: rgba($color: $hot-pink, $alpha: 1);
+            }
+
+            .submitBtn {
+                background-color: rgba($color: $aero, $alpha: 1);
+                transition: 0.3s ease;
+
+                &:hover {
+                    background-color: rgba($color: $indigo-dye, $alpha: 1);
+                }
             }
         }
 
     }
     .namesBox {
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-around;
         align-items: center;
-        button{
-            height: 60px;
-            width: 100px;
+        height: 20vh;
+
+        h2 {
+            font-family: 'Futura';
+            font-size: 3rem;
+            letter-spacing: 1px;
+            color: rgba($color: $indigo-dye, $alpha: 1.0);
         }
+
+        .btnContainer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 70%;
+            margin-top: 30px;
+
+            button{
+                height: 60px;
+                width: 100px;
+                border-radius: 25px;
+            }
+        }
+        
     }
 }
 

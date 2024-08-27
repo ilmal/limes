@@ -74,9 +74,9 @@ const Quotes = () => {
     }
 
     return (
-        <div className="quotes">
+        <div className="quotes backgroundLimes">
             <div className='topButtons'>
-                <button onClick={()=>setPage("list")}>List</button>
+                <button onClick={()=>setPage("list")}>Quotes</button>
                 <button onClick={()=>setPage("add")}>Add</button>
             </div>
             {
@@ -122,16 +122,19 @@ const Quotes = () => {
                 :
                 name === ""? 
                 <div className="box namesBox">
-                    <button onClick={()=>setName("nils")}>Nils</button>
-                    <button onClick={()=>setName("emilie")}>Emilie</button>
+                    <h2>Choose person</h2>
+                    <div className='btnContainer'>
+                        <button onClick={()=>setName("nils")}>Nils</button>
+                        <button onClick={()=>setName("emilie")}>Emilie</button>
+                    </div>
                 </div>
                 :
                 <form className='box' onSubmit={handleSubmit}>
                     <label>Quote</label>
                     <input type="text" placeholder="Enter a quote" />
                     <div>
-                        <button className='backButton' onClick={()=>setName("")}>back</button>
-                        <button type="submit">Submit</button>
+                        <button className='backButton' onClick={()=>setName("")}>Back</button>
+                        <button className="submitBtn" type="submit">Submit</button>
                     </div>
                 </form>
             }

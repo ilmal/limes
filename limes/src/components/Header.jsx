@@ -15,7 +15,7 @@ const Header = () => {
                     <div />
                     <li className="linkStyle">Photodump</li>
                     <div />
-                    <li onClick={()=> {navigate("/quotes")}} className="linkStyle">Quotes</li>
+                    <li onClick={()=> {navigate("/quotes")}} className="linkStyle quote">Quotes</li>
                     <div />
                     <li className="linkStyle">Misc</li>
                 </ul>
