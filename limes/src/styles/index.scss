@@ -17,9 +17,17 @@ body {
 .backgroundLimes {
     background-image: url("../../public/limesBG2.png");
     background-blend-mode: soft-light;
+    background-repeat: repeat-y;
+    height: 100%;
+    min-height: 100vh;
 }
 
 @font-face {
     font-family: "Futura";
     src: url('../../public/futura/Futura-CondensedLight.otf');
+}
+
+@font-face {
+    font-family: "TW Cen MT";
+    src: url('../../public/Tw-Cen-MT.ttf');
 }

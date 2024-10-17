@@ -57,9 +57,13 @@
 
             button{
                 margin-right: 1rem;
-                color: black;
+                // color: black;
                 border: none;
-                border-radius: 5px;
+                border-radius: 100%;
+                height: 23px;
+                width: 25px;
+                color: white;
+                background-color: rgba($color: $aero, $alpha: 1);
                 font-size: 14px;
                 cursor: pointer;
                 transition: background-color 0.3s ease;
@@ -68,12 +72,16 @@
             div{
 
                 .quote{
-                    font-size: 2rem;
+                    font-size: 1.1rem;
+                    font-family: 'TW Cen MT';
+                    margin: 1.2rem;
+                    color: rgba($color: $indigo-dye, $alpha: 1);
                 }
 
                 .name{
                     margin-left: .3rem;
                     font-size: 1rem;
+                    font-family: 'TW Cen MT';
                 }
             }
         }
